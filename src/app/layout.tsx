@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="ar">
       <body
-        className={`bg-background text-foreground antialiased ${alexandria.className}`}
+        className={`bg-foreground text-background text-foreground antialiased ${alexandria.className}`}
       >
         {children}
       </body>
