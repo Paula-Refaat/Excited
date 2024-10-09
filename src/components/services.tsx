@@ -1,9 +1,11 @@
 'use client';
+import Box from '@/components/shared/box';
 import { Circle, Shape } from '@/components/shared/icons';
+import Item from '@/components/shared/item';
 import { SERVICES } from '@/constants/data';
 import useMediaQuery from '@/hooks/useMediaQuery';
 import { cn } from '@/lib/utils';
-import React, { FC, useMemo, useState } from 'react';
+import React, { FC, useState } from 'react';
 
 const Services: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
   className,
@@ -68,88 +70,28 @@ const Services: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
               {SERVICES[0].icon}
               {SERVICES[0].title}
             </Item>
-            {SERVICES.slice(1).map((service, i) => (
-              <Item
-                key={i}
-                isActive={i + 1 === currentIndex}
-                onClick={() => setCurrentIndex(i + 1)}
-                side={
-                  isMobile
-                    ? 'right'
-                    : service.id === 6 || service.id === 5
-                      ? 'top'
-                      : 'left'
-                }
-              >
-                {service.icon}
-                {service.title}
-              </Item>
-            ))}
+            {SERVICES.slice(1).map((service, i) => {
+              const side = isMobile
+                ? 'right'
+                : service.id === 6 || service.id === 5
+                  ? 'top'
+                  : 'left';
+              return (
+                <Item
+                  key={i}
+                  isActive={i + 1 === currentIndex}
+                  onClick={() => setCurrentIndex(i + 1)}
+                  side={side}
+                >
+                  {service.icon}
+                  {service.title}
+                </Item>
+              );
+            })}
           </div>
         </article>
       </section>
     </>
-  );
-};
-
-const Box: FC<React.HTMLAttributes<HTMLDivElement>> = ({
-  children,
-  className,
-  ...props
-}) => {
-  return (
-    <div
-      className={cn(
-        'rounded-[20px] border border-primary p-4 text-secondary',
-        className,
-      )}
-      {...props}
-    >
-      {children}
-    </div>
-  );
-};
-
-type ItemProps = React.ComponentProps<typeof Box> & {
-  isActive?: boolean;
-  side?: 'left' | 'right' | 'top' | 'bottom';
-};
-const Item: FC<ItemProps> = ({
-  className,
-  children,
-  isActive = false,
-  side = 'left',
-  ...props
-}) => {
-  const sides = useMemo(
-    () => ({
-      left: (
-        <div className="absolute right-[100%] top-[50%] h-[30px] w-[10px] translate-y-[-50%] rounded-[20px] bg-primary" />
-      ),
-      right: (
-        <div className="absolute left-[100%] top-[50%] h-[30px] w-[10px] translate-y-[-50%] rounded-[20px] bg-primary" />
-      ),
-      top: (
-        <div className="absolute bottom-[100%] left-[50%] h-[10px] w-[30px] translate-x-[-50%] rounded-[20px] bg-primary" />
-      ),
-      bottom: (
-        <div className="absolute bottom-0 left-[50%] top-[100%] h-[10px] w-[30px] translate-x-[-50%] rounded-[20px] bg-primary" />
-      ),
-    }),
-    [],
-  );
-  return (
-    <Box
-      role="button"
-      className={cn(
-        'relative flex cursor-pointer items-center gap-4 duration-300 *:shrink-0 hover:bg-primary hover:text-primary-foreground',
-        className,
-      )}
-      {...props}
-    >
-      {isActive && sides[side]}
-      {children}
-    </Box>
   );
 };
 
