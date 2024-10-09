@@ -20,7 +20,7 @@ const Hero: FC<React.HTMLAttributes<HTMLDivElement>> = ({
         تجربة متجددة وتطلع دائم نحو ما يليق بوطننا
       </p>
 
-      <div className="reveal absolute left-[50%] top-[50%] h-[2px] w-[80%] translate-x-[-50%] translate-y-[100px] bg-primary md:w-[70%] md:translate-y-[150px]"></div>
+      <div className="reveal absolute left-[50%] top-[50%] hidden h-[2px] w-[80%] translate-x-[-50%] translate-y-[100px] bg-primary md:block md:w-[70%] md:translate-y-[150px]"></div>
 
       <button
         onClick={() =>
