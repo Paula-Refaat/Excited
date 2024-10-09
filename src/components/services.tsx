@@ -5,7 +5,10 @@ import Item from '@/components/shared/item';
 import { SERVICES } from '@/constants/data';
 import useMediaQuery from '@/hooks/useMediaQuery';
 import { cn } from '@/lib/utils';
+import { Heading, Paragraph, SubHeading } from '@/components/shared/typography';
 import React, { FC, useState } from 'react';
+import Container from '@/components/layouts/container';
+import Section from '@/components/layouts/section';
 
 const Services: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
   className,
@@ -26,29 +29,29 @@ const Services: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
         </div>
         <article className="relative text-center md:p-20 md:text-start lg:w-[70%]">
           <div className="absolute left-0 top-0 hidden h-52 w-full rounded-tr-[118px] border-r border-t border-primary lg:block"></div>
-          <h2 className="text-2xl font-bold text-primary">الخدمات:</h2>
-          <p className="mt-2 px-8 text-center text-lg font-semibold md:mt-8 lg:pr-12 lg:text-right">
+          <Heading as="h2" className="text-2xl font-bold text-primary">
+            الخدمات:
+          </Heading>
+          <Paragraph className="font-semibold md:mt-8 md:text-lg lg:w-full lg:pr-12 lg:text-right">
             نحن نقدم مجموعة شاملة من الخدمات التي تغطي جميع جوانب تنظيم
             الفعاليات، من المؤتمرات والمعارض إلى ورش العمل واللقاءات الحكومية.
-          </p>
+          </Paragraph>
         </article>
       </section>
-      <section
+      <Section
         id="event-management"
         className={cn('px-8 py-12', className)}
         {...props}
       >
-        <article className="mx-auto text-center md:w-[65%]">
-          <h2 className="text-xl font-bold text-secondary">
-            إدارة الحدث والإشراف على الفعاليات :
-          </h2>
-          <p className="mx-auto mt-2 text-center font-light lg:w-[80%]">
+        <Container className="mx-auto text-center md:w-[65%]">
+          <SubHeading>إدارة الحدث والإشراف على الفعاليات :</SubHeading>
+          <Paragraph>
             تعتمـد Excited منهجيـة إدارة المشـاريع في تخطيـط وتنفيـذ وإدارة
             المشـاريع لاسـتثمار المـوارد بالشـكل الأمثـل، وإتمام متطلبــات
             المشروع بالمواصفــات المطلوبــة وفقًا لخطــة زمنيــة محــددة
             ومواصفــات جــودة عاليــة وذلــك بهــدف إنتــاج مخــرج نهــائي
             يتوافــق مــع أهــداف المشروع ورؤيتــه.
-          </p>
+          </Paragraph>
           <div className="mt-10 flex w-full flex-col gap-2 md:grid md:grid-cols-3 md:grid-rows-4">
             <Item
               onClick={() => setCurrentIndex(0)}
@@ -89,8 +92,8 @@ const Services: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
               );
             })}
           </div>
-        </article>
-      </section>
+        </Container>
+      </Section>
     </>
   );
 };
