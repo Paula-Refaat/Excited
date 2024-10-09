@@ -8,6 +8,11 @@ export {
   Waypoints as WaypointsIcon,
   Ribbon as RibbonIcon,
   ShieldCheck as SecurityIcon,
+  Plane as PlaneIcon,
+  Printer as PrinterIcon,
+  Car as CarIcon,
+  CarTaxiFront as CarTaxiFrontIcon,
+  Bus as BusIcon,
 } from 'lucide-react';
 
 type SvgProps = React.SVGProps<SVGSVGElement>;

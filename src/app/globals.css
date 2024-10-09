@@ -82,6 +82,15 @@ html {
   -webkit-animation: reveal 2s ease-in-out alternate-reverse infinite;
 }
 
+.center-x {
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
 @media screen and (min-width: 640px) {
   :root {
     --translateY: 150px;

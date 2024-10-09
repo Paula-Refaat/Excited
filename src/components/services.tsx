@@ -5,7 +5,7 @@ import Box from '@/components/shared/box';
 import { Circle, Shape } from '@/components/shared/icons';
 import Item from '@/components/shared/item';
 import { Heading, Paragraph, SubHeading } from '@/components/shared/typography';
-import { SERVICES } from '@/constants/data';
+import { LOGISTICS, SERVICES } from '@/constants/data';
 import useMediaQuery from '@/hooks/useMediaQuery';
 import { cn } from '@/lib/utils';
 import React, { FC, useState } from 'react';
@@ -96,13 +96,13 @@ const Services: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
       </Section>
       <Section
         style={{
-          backgroundImage: 'url(/image.webp)',
+          backgroundImage: isMobile ? '' : 'url(/image.webp)',
           backgroundPosition: 'center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backdropFilter: 'blur(50%)',
         }}
-        className={cn('relative h-screen px-8 py-12', className)}
+        className={cn('relative min-h-screen px-8 py-12', className)}
         {...props}
       >
         <div className="absolute inset-0 bg-primary mix-blend-hue"></div>
@@ -139,6 +139,29 @@ const Services: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
                   </p>
                 </div>
               </div>
+            ))}
+          </div>
+        </Container>
+      </Section>
+      <Section className={cn('min-h-screen px-8 py-12', className)} {...props}>
+        <Container className="mx-auto flex flex-col items-center justify-center text-center md:w-[70%]">
+          <SubHeading>الخدمات اللوجستية</SubHeading>
+          <Paragraph>
+            مجموعة شاملة من الخدمات اللوجستية التي تغطي جميع احتياجات الفعاليات،
+            وتشمل:
+          </Paragraph>
+          <div className="mt-8 grid w-full grid-cols-1 justify-center gap-4 md:grid-cols-2 lg:w-[90%]">
+            {LOGISTICS.map((service, i) => (
+              <Item
+                key={i}
+                className="group relative w-full py-8 hover:bg-transparent hover:text-secondary"
+              >
+                {service.icon}
+                {service.title}
+                <div className="center-x absolute top-[100%] z-20 h-0 w-[80%] overflow-hidden rounded-b-xl bg-secondary px-3 py-4 text-secondary-foreground opacity-0 transition-all duration-500 ease-in-out group-hover:h-[200px] group-hover:opacity-100">
+                  <p className="text-start font-light">{service.description}</p>
+                </div>
+              </Item>
             ))}
           </div>
         </Container>
