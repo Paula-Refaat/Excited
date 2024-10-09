@@ -35,3 +35,41 @@ export const Logo: FC<SvgProps> = ({ className, ...props }) => {
     </svg>
   );
 };
+
+export const Arrow: FC<SvgProps> = ({ className, ...props }) => {
+  return (
+    <svg
+      width="31"
+      height="21"
+      viewBox="0 0 31 21"
+      className={cn(
+        'mt-2 fill-secondary transition-all duration-300 ease-linear',
+        className,
+      )}
+      {...props}
+    >
+      <path d="M15.3202 20.03L10.4802 13.31L0.910156 0H9.2702L15.6102 9.45001L21.8802 0H30.0902L20.4102 13.31L15.3202 20.03Z" />
+    </svg>
+  );
+};
+
+export const Circle: FC<SvgProps> = (props) => {
+  return (
+    <svg width="170" height="170" viewBox="0 0 223 223" {...props}>
+      <circle cx="111.5" cy="111.5" r="111.5" fill="#E9D8F6" />
+    </svg>
+  );
+};
+export const Shape: FC<SvgProps> = ({ className, ...props }) => {
+  return (
+    <svg
+      width="170"
+      height="400"
+      viewBox="0 0 225 530"
+      className={cn('fill-primary', className)}
+      {...props}
+    >
+      <path d="M103.496 124.304C103.496 121.767 101.319 119.815 98.9446 119.815H0L0.198083 0H99.1427C168.602 0 225 55.81 225 124.304V530H103.496V124.304Z" />
+    </svg>
+  );
+};

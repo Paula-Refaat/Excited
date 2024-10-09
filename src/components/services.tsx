@@ -1,4 +1,5 @@
 'use client';
+import { Circle, Shape } from '@/components/shared/icons';
 import { SERVICES } from '@/constants/data';
 import { cn } from '@/lib/utils';
 import React, { FC, useState } from 'react';
@@ -16,28 +17,8 @@ const Services: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
         className="relative flex h-[50vh] items-center lg:h-svh lg:px-20"
       >
         <div className="absolute left-20 top-24 hidden lg:block">
-          <svg
-            width="170"
-            height="170"
-            viewBox="0 0 223 223"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="animate-bounce ease-in-out"
-          >
-            <circle cx="111.5" cy="111.5" r="111.5" fill="#E9D8F6" />
-          </svg>
-          <svg
-            width="170"
-            height="400"
-            viewBox="0 0 225 530"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M103.496 124.304C103.496 121.767 101.319 119.815 98.9446 119.815H0L0.198083 0H99.1427C168.602 0 225 55.81 225 124.304V530H103.496V124.304Z"
-              fill="#865CA3"
-            />
-          </svg>
+          <Circle className="animate-bounce ease-in-out" />
+          <Shape />
         </div>
         <article className="relative text-center md:p-20 md:text-start lg:w-[70%]">
           <div className="absolute left-0 top-0 hidden h-52 w-full rounded-tr-[118px] border-r border-t border-primary lg:block"></div>
@@ -48,7 +29,11 @@ const Services: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
           </p>
         </article>
       </section>
-      <section className={cn('px-8 py-12', className)} {...props}>
+      <section
+        id="event-management"
+        className={cn('px-8 py-12', className)}
+        {...props}
+      >
         <article className="mx-auto text-center md:w-[65%]">
           <h2 className="text-xl font-bold text-secondary">
             إدارة الحدث والإشراف على الفعاليات :
