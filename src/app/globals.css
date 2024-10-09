@@ -8,8 +8,9 @@
     --foreground: #020102;
     --primary: #865ca3;
     --primary-foreground: #f8f2fc;
-    --secondary: #e9d8f6;
-    --secondary-foreground: #464646;
+    --secondary: #464646;
+    --secondary-foreground: #e9d8f6;
+    --radius: 0.5rem;
   }
 
   .dark {
@@ -19,7 +20,6 @@
     --primary-foreground: #f8f2fc;
     --secondary: #e9d8f6;
     --secondary-foreground: #464646;
-    --radius: 0.5rem;
   }
 }
 html {
