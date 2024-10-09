@@ -1,8 +1,9 @@
 'use client';
 import { Circle, Shape } from '@/components/shared/icons';
 import { SERVICES } from '@/constants/data';
+import useMediaQuery from '@/hooks/useMediaQuery';
 import { cn } from '@/lib/utils';
-import React, { FC, useState } from 'react';
+import React, { FC, useMemo, useState } from 'react';
 
 const Services: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
   className,
@@ -10,6 +11,7 @@ const Services: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentService = SERVICES[currentIndex];
+  const { isMatched: isMobile } = useMediaQuery({ maxWidth: 768 });
   return (
     <>
       <section
@@ -61,6 +63,7 @@ const Services: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
               onClick={() => setCurrentIndex(0)}
               isActive={currentIndex === 0}
               className="md:hidden"
+              side={isMobile ? 'right' : 'left'}
             >
               {SERVICES[0].icon}
               {SERVICES[0].title}
@@ -70,6 +73,13 @@ const Services: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
                 key={i}
                 isActive={i + 1 === currentIndex}
                 onClick={() => setCurrentIndex(i + 1)}
+                side={
+                  isMobile
+                    ? 'right'
+                    : service.id === 6 || service.id === 5
+                      ? 'top'
+                      : 'left'
+                }
               >
                 {service.icon}
                 {service.title}
@@ -102,13 +112,32 @@ const Box: FC<React.HTMLAttributes<HTMLDivElement>> = ({
 
 type ItemProps = React.ComponentProps<typeof Box> & {
   isActive?: boolean;
+  side?: 'left' | 'right' | 'top' | 'bottom';
 };
 const Item: FC<ItemProps> = ({
   className,
   children,
   isActive = false,
+  side = 'left',
   ...props
 }) => {
+  const sides = useMemo(
+    () => ({
+      left: (
+        <div className="absolute right-[100%] top-[50%] h-[30px] w-[10px] translate-y-[-50%] rounded-[20px] bg-primary" />
+      ),
+      right: (
+        <div className="absolute left-[100%] top-[50%] h-[30px] w-[10px] translate-y-[-50%] rounded-[20px] bg-primary" />
+      ),
+      top: (
+        <div className="absolute bottom-[100%] left-[50%] h-[10px] w-[30px] translate-x-[-50%] rounded-[20px] bg-primary" />
+      ),
+      bottom: (
+        <div className="absolute bottom-0 left-[50%] top-[100%] h-[10px] w-[30px] translate-x-[-50%] rounded-[20px] bg-primary" />
+      ),
+    }),
+    [],
+  );
   return (
     <Box
       role="button"
@@ -118,12 +147,7 @@ const Item: FC<ItemProps> = ({
       )}
       {...props}
     >
-      {isActive && (
-        <>
-          <div className="absolute right-[100%] top-[50%] hidden h-[30px] w-[10px] translate-y-[-50%] rounded-[20px] bg-primary md:block"></div>
-          <div className="absolute left-[100%] top-[50%] h-[30px] w-[10px] translate-y-[-50%] rounded-[20px] bg-primary md:block md:hidden"></div>
-        </>
-      )}
+      {isActive && sides[side]}
       {children}
     </Box>
   );
