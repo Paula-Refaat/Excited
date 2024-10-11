@@ -1,5 +1,8 @@
+import EventManagement from '@/components/event-management';
 import Hero from '@/components/hero';
-import Services from '@/components/services';
+import Logistics from '@/components/logistics';
+import ManagementServices from '@/components/management-services';
+import ServiceOverview from '@/components/service-overview';
 import { Logo } from '@/components/shared/icons';
 
 const Home = () => {
@@ -9,7 +12,10 @@ const Home = () => {
         <Logo className="h-[14px] w-[150px] scale-90 md:scale-100" />
       </header>
       <Hero />
-      <Services />
+      <ServiceOverview />
+      <EventManagement />
+      <ManagementServices />
+      <Logistics />
     </div>
   );
 };

@@ -19,7 +19,7 @@ type Service = {
   icon: ReactNode;
   description: string;
 };
-export const SERVICES: Service[] = [
+export const EVENT_MANAGEMENT_SERVICES: Service[] = [
   {
     id: 1,
     title: 'التخطيـــط الاستراتيجي',
