@@ -102,7 +102,7 @@ const Services: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
           backgroundRepeat: 'no-repeat',
           backdropFilter: 'blur(50%)',
         }}
-        className={cn('relative min-h-screen px-8 py-12', className)}
+        className={cn('relative min-h-[800px] px-8 py-12', className)}
         {...props}
       >
         <div className="absolute inset-0 bg-primary mix-blend-hue"></div>

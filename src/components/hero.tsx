@@ -10,7 +10,7 @@ const Hero: FC<React.HTMLAttributes<HTMLDivElement>> = ({
   return (
     <section
       className={cn(
-        'relative flex h-[70vh] flex-col items-center justify-center gap-4 rounded-b-[118px] border-x border-b border-primary px-16 text-center lg:h-screen',
+        'relative flex h-[70vh] flex-col items-center justify-center gap-4 overflow-hidden rounded-b-[118px] border-x border-b border-primary px-16 text-center lg:h-screen',
         className,
       )}
       {...props}
