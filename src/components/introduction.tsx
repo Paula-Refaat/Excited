@@ -1,6 +1,19 @@
+'use client';
+
+import useIntersectionObserver from '@/hooks/useIntersectionObserver';
+import { useEffect, useRef } from 'react';
+
 const Introduction = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isVisible = useIntersectionObserver(ref, { threshold: 0.1 });
+  useEffect(() => {
+    if (isVisible) {
+      ref.current?.classList.add('fadeInDown');
+    }
+  }, [isVisible]);
   return (
     <div
+      ref={ref}
       id="introduction"
       className="flex w-full flex-col items-center justify-between gap-4 px-6 pt-10 lg:flex-row lg:gap-20 lg:px-40 lg:pt-52"
     >
