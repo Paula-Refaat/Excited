@@ -25,7 +25,7 @@ const Hero: FC<React.HTMLAttributes<HTMLDivElement>> = ({
       <button
         onClick={() =>
           scrollToSection({
-            element: document.getElementById('services'),
+            element: document.getElementById('introduction'),
           })
         }
         className="group absolute bottom-10 flex flex-col items-center text-secondary"
