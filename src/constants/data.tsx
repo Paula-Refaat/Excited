@@ -106,3 +106,28 @@ export const LOGISTICS: Service[] = [
     icon: <BusIcon className={ICON_CLASSNAME} />,
   },
 ];
+
+export const VISIONS: { title: string; description: string }[] = [
+  {
+    title: 'التميز (Exellence)',
+    description: 'تنظيم الأحداث والمؤتمرات من خلال تقديم تجارب مبهرة لا تُنسى.',
+  },
+  {
+    title: 'المشاركة (Engagement)',
+    description: 'طريقة تفاعلية تترك أثراً عميقاً وتحقق الأهداف المرجوة.',
+  },
+  {
+    title: 'التمكين (Empowerment)',
+    description:
+      'تحقيق رؤية عملائنا وتحويلها إلى واقع ملموس عبر التخطيط والتنفيذ المتقن.',
+  },
+  {
+    title: 'الكفاءة (Efficiency)',
+    description:
+      'تقديم خدماتنا بأعلى مستويات الكفاءة والاحترافية لتحقيق أعلى التوقعات الممكنة.',
+  },
+  {
+    title: 'التطور (Evolution)',
+    description: 'التحسين المستمر في الخدمات ومواكبة أفضل التقنيات والمستجدات',
+  },
+];

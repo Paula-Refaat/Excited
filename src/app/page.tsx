@@ -5,6 +5,7 @@ import Logistics from '@/components/logistics';
 import ManagementServices from '@/components/management-services';
 import ServiceOverview from '@/components/service-overview';
 import { Logo } from '@/components/shared/icons';
+import Vision from '@/components/vision';
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       </header>
       <Hero />
       <Introduction />
+      <Vision />
       <ServiceOverview />
       <EventManagement />
       <ManagementServices />
