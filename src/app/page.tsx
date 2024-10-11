@@ -1,5 +1,6 @@
 import EventManagement from '@/components/event-management';
 import Hero from '@/components/hero';
+import Introduction from '@/components/introduction';
 import Logistics from '@/components/logistics';
 import ManagementServices from '@/components/management-services';
 import ServiceOverview from '@/components/service-overview';
@@ -12,6 +13,7 @@ const Home = () => {
         <Logo className="h-[14px] w-[150px] scale-90 md:scale-100" />
       </header>
       <Hero />
+      <Introduction />
       <ServiceOverview />
       <EventManagement />
       <ManagementServices />

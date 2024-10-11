@@ -40,8 +40,9 @@ html {
   -webkit-animation: bounce 3s infinite;
 }
 
-/* make animation for reveal */
-
+strong {
+  font-weight: 500;
+}
 @keyframes reveal {
   0% {
     opacity: 0;
