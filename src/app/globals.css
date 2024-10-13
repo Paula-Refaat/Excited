@@ -40,6 +40,10 @@ html {
   -webkit-animation: bounce 3s infinite;
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 strong {
   font-weight: 500;
 }

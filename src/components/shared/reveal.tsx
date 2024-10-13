@@ -1,42 +1,46 @@
 'use client';
-import React, { FC, useEffect, useRef } from 'react';
+import { cn } from '@/lib/utils';
+import React, { FC, useCallback, useEffect, useRef, useState } from 'react';
 type RevealProps = React.HTMLAttributes<HTMLDivElement> & {
   side?: 'left' | 'right' | 'up' | 'down';
 };
-const Reveal: FC<RevealProps> = ({ children, side = 'left', ...props }) => {
+const Reveal: FC<RevealProps> = ({
+  children,
+  className,
+  side = 'left',
+  ...props
+}) => {
   const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    setIsVisible(false);
+    const timeout = setTimeout(() => {
+      setIsVisible(true);
+    }, 50);
+    return () => clearTimeout(timeout);
+  }, [children, side]);
+
+  const getAnimationClass = useCallback(() => {
     switch (side) {
       case 'left':
-        ref?.current?.classList.remove('reveal-left');
-        void ref?.current?.offsetWidth;
-        ref?.current?.classList.add('reveal-left');
-        break;
+        return isVisible ? 'reveal-left' : 'invisible';
+
       case 'right':
-        ref?.current?.classList.remove('reveal-right');
-        void ref?.current?.offsetWidth;
-        ref?.current?.classList.add('reveal-right');
-        break;
+        return isVisible ? 'reveal-right' : 'invisible';
+
       case 'up':
-        ref?.current?.classList.remove('reveal-up');
-        void ref?.current?.offsetWidth;
-        ref?.current?.classList.add('reveal-up');
-        break;
+        return isVisible ? 'reveal-up' : 'invisible';
+
       case 'down':
-        ref?.current?.classList.remove('reveal-down');
-        void ref?.current?.offsetWidth;
-        ref?.current?.classList.add('reveal-down');
-        break;
+        return isVisible ? 'reveal-down' : 'invisible';
+
       default:
-        ref?.current?.classList.remove('reveal-left');
-        void ref?.current?.offsetWidth;
-        ref?.current?.classList.add('reveal-left');
-        break;
+        return isVisible ? 'reveal-left' : 'invisible';
     }
-  }, [children, side]);
+  }, [isVisible, side]);
   return (
-    <div ref={ref} {...props}>
+    <div ref={ref} className={cn(getAnimationClass(), className)} {...props}>
       {children}
     </div>
   );
