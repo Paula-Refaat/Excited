@@ -4,6 +4,7 @@ import Hero from '@/components/hero';
 import Introduction from '@/components/introduction';
 import Logistics from '@/components/logistics';
 import ManagementServices from '@/components/management-services';
+import Message from '@/components/message';
 import ServiceOverview from '@/components/service-overview';
 import { Logo } from '@/components/shared/icons';
 import Vision from '@/components/vision';
@@ -17,6 +18,7 @@ const Home = () => {
       <Hero />
       <Introduction />
       <CompanyStory />
+      <Message />
       <Vision />
       <ServiceOverview />
       <EventManagement />
