@@ -12,6 +12,7 @@
     --secondary-foreground: #e9d8f6;
     --radius: 0.5rem;
     --translateY: 100px;
+    --accent: #020102;
   }
 
   .dark {
@@ -21,6 +22,7 @@
     --primary-foreground: #f8f2fc;
     --secondary: #e9d8f6;
     --secondary-foreground: #464646;
+    --accent: #effffb;
   }
 }
 html {

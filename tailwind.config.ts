@@ -39,8 +39,8 @@ const config = {
           foreground: 'var(--secondary-foreground)',
         },
         accent: {
-          DEFAULT: 'var(--secondary)',
-          foreground: 'var(--secondary-foreground)',
+          DEFAULT: 'var(--accent)',
+          foreground: 'var(--foreground)',
         },
         popover: {
           DEFAULT: 'var(--secondary)',
