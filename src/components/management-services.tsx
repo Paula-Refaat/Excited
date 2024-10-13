@@ -2,9 +2,11 @@
 import Container from '@/components/layouts/container';
 import Section from '@/components/layouts/section';
 import { SubHeading, Paragraph } from '@/components/shared/typography';
+import { MANAGEMENT_SERVICES } from '@/constants/data';
 import useMediaQuery from '@/hooks/useMediaQuery';
 import { cn } from '@/lib/utils';
 import React, { FC } from 'react';
+
 type ManagementServicesProps = React.ComponentProps<typeof Section>;
 const ManagementServices: FC<ManagementServicesProps> = ({
   className,
@@ -32,27 +34,30 @@ const ManagementServices: FC<ManagementServicesProps> = ({
           من المؤتمرات والمعارض إلى ورش العمل واللقاءات الحكومية. تشمل خدماتنا:
         </Paragraph>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {Array.from({ length: 4 }).map((_, i) => (
+          {MANAGEMENT_SERVICES.map(({ description, img, title }, i) => (
             <div
               key={i}
               className="group h-[290px] w-full rounded-2xl bg-secondary text-secondary-foreground transition-all duration-500 ease-in-out hover:aspect-auto hover:h-[500px] hover:bg-primary hover:text-secondary"
             >
               <div className="flex flex-col gap-2 p-1">
                 <figure>
-                  <img
-                    src={`/image.webp`}
-                    alt="image"
-                    width={300}
-                    height={300}
-                    className="w-full rounded-xl"
-                  />
+                  <div className="relative h-[220px] w-full">
+                    <img
+                      src={img}
+                      alt="image"
+                      width={300}
+                      height={300}
+                      className="absolute size-full rounded-xl object-cover"
+                    />
+                    <div className="absolute inset-0 size-full bg-primary opacity-80 mix-blend-hue"></div>
+                    <div className="absolute inset-0 size-full bg-black/5"></div>
+                  </div>
                   <figcaption className="mt-4 text-center text-lg font-semibold">
-                    الخدمة {i + 1}
+                    {title}
                   </figcaption>
                 </figure>
                 <p className="hidden px-4 text-start font-light group-hover:block">
-                  الفعاليات، من المؤتمرات والمعارض إلى ورش العمل واللقاءات
-                  الحكومية. تشمل خدماتنا:
+                  {description}
                 </p>
               </div>
             </div>
