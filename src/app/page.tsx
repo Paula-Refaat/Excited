@@ -1,4 +1,5 @@
 import CompanyStory from '@/components/company-story';
+import Contact from '@/components/contact';
 import EventManagement from '@/components/event-management';
 import Hero from '@/components/hero';
 import Introduction from '@/components/introduction';
@@ -24,6 +25,7 @@ const Home = () => {
       <EventManagement />
       <ManagementServices />
       <Logistics />
+      <Contact />
     </div>
   );
 };

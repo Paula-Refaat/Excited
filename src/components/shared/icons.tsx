@@ -13,6 +13,7 @@ export {
   Car as CarIcon,
   CarTaxiFront as CarTaxiFrontIcon,
   Bus as BusIcon,
+  Instagram as InstagramIcon,
 } from 'lucide-react';
 
 type SvgProps = React.SVGProps<SVGSVGElement>;
