@@ -1,6 +1,7 @@
 'use client';
 import Section from '@/components/layouts/section';
 import { FiveVisions } from '@/components/shared/icons';
+import Reveal from '@/components/shared/reveal';
 import { Heading, Paragraph, SubHeading } from '@/components/shared/typography';
 import { VISIONS } from '@/constants/data';
 import { cn } from '@/lib/utils';
@@ -39,12 +40,16 @@ const Vision = () => {
             </ul>
           </div>
           <article className="flex flex-col items-start">
-            <SubHeading className="lg:text-lg">
-              <span>{currentIndex + 1}. </span> {currentVision.title}
-            </SubHeading>
-            <Paragraph className="mx-[none] max-w-[300px] px-0 text-start lg:w-full">
-              {currentVision.description}
-            </Paragraph>
+            <Reveal>
+              <SubHeading className="lg:text-lg">
+                <span>{currentIndex + 1}. </span> {currentVision.title}
+              </SubHeading>
+            </Reveal>
+            <Reveal side="up">
+              <Paragraph className="mx-[none] max-w-[300px] px-0 text-start lg:w-full">
+                {currentVision.description}
+              </Paragraph>
+            </Reveal>
           </article>
         </div>
       </div>
