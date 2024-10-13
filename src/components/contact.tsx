@@ -4,7 +4,7 @@ import React from 'react';
 const Contact = () => {
   return (
     <div className="flex h-[50vh] items-center justify-center px-6">
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center gap-4">
         <p className="text-center text-xl font-bold md:text-2xl">
           يسعدنا تواصلك معنا وثقتك بنا
         </p>
