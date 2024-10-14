@@ -21,8 +21,9 @@ const ManagementServices: FC<ManagementServicesProps> = ({
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backdropFilter: 'blur(50%)',
+        backgroundAttachment: 'fixed',
       }}
-      className={cn('relative min-h-[800px] px-8 py-12', className)}
+      className={cn('relative min-h-[130vh] px-8 py-12', className)}
       {...props}
     >
       <div className="absolute inset-0 bg-primary mix-blend-hue"></div>
@@ -37,7 +38,7 @@ const ManagementServices: FC<ManagementServicesProps> = ({
           {MANAGEMENT_SERVICES.map(({ description, img, title }, i) => (
             <div
               key={i}
-              className="group h-[290px] w-full rounded-2xl bg-secondary text-secondary-foreground transition-all duration-500 ease-in-out hover:aspect-auto hover:h-[520px] hover:bg-primary hover:text-secondary"
+              className="group h-[290px] w-full rounded-2xl bg-secondary text-secondary-foreground transition-all duration-500 ease-in-out hover:aspect-auto hover:h-[600px] hover:bg-primary hover:text-secondary"
             >
               <div className="flex flex-col gap-2 p-1">
                 <figure>
