@@ -37,7 +37,7 @@ const ManagementServices: FC<ManagementServicesProps> = ({
           {MANAGEMENT_SERVICES.map(({ description, img, title }, i) => (
             <div
               key={i}
-              className="group h-[290px] w-full rounded-2xl bg-secondary text-secondary-foreground transition-all duration-500 ease-in-out hover:aspect-auto hover:h-[500px] hover:bg-primary hover:text-secondary"
+              className="group h-[290px] w-full rounded-2xl bg-secondary text-secondary-foreground transition-all duration-500 ease-in-out hover:aspect-auto hover:h-[520px] hover:bg-primary hover:text-secondary"
             >
               <div className="flex flex-col gap-2 p-1">
                 <figure>
