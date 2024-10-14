@@ -3,8 +3,8 @@ import { Heading, SubHeading } from '@/components/shared/typography';
 
 const Message = () => {
   return (
-    <Section>
-      <article>
+    <Section className="flex items-center justify-center">
+      <article className="flex flex-col items-center text-center">
         <Heading>الرسالة:</Heading>
         <SubHeading className="mt-16">تحقيق المعادلة الاكثر توازنا</SubHeading>
         <p className="mt-2 w-full max-w-[800px] text-accent">
