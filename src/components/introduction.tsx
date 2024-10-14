@@ -15,7 +15,7 @@ const Introduction = () => {
     <div
       ref={ref}
       id="introduction"
-      className="flex w-full flex-col items-center justify-between gap-4 px-6 pt-10 lg:flex-row lg:gap-20 lg:px-40 lg:pt-52"
+      className="flex w-full flex-col items-center justify-between gap-4 px-6 pt-10 lg:flex-row lg:gap-20 lg:px-40"
     >
       <div className="relative h-[300px] w-full rounded-3xl bg-red-400 lg:h-[500px] lg:w-[470px]">
         {/* <Shape className='fill-none  stroke-primary bottom-[35%] left-[80%] absolute stroke-2'/>
