@@ -28,6 +28,7 @@ export {
   Cctv as CameraIcon,
   LockKeyhole as PrivacyIcon,
   Factory as FactoryIcon,
+  TvMinimalPlay as MediaIcon,
 } from 'lucide-react';
 
 type SvgProps = React.SVGProps<SVGSVGElement>;

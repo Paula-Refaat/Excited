@@ -1,5 +1,6 @@
 import CompanyStory from '@/components/company-story';
 import Contact from '@/components/contact';
+import DigitalMedia from '@/components/digital-media';
 import Entertainment from '@/components/entertainment';
 import EventManagement from '@/components/event-management';
 import Hero from '@/components/hero';
@@ -31,6 +32,7 @@ const Home = () => {
       <Entertainment />
       <ProductionLine />
       <Technology />
+      <DigitalMedia />
       <Contact />
     </div>
   );
