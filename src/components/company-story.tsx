@@ -8,7 +8,7 @@ const CompanyStory = () => {
     <Section className="flex gap-12 md:px-20">
       <RotatedU className="hidden w-full md:block md:w-auto" />
       <article>
-        <Heading>قصة الشركة : Company Story</Heading>
+        <Heading>قصة الشركة</Heading>
         <SubHeading className="mt-16">
           رمزاً جديدًا للإبداع والتميز في عالم الفعاليات
         </SubHeading>

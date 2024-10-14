@@ -1,5 +1,4 @@
 import { InstagramIcon } from '@/components/shared/icons';
-import React from 'react';
 
 const Contact = () => {
   return (
@@ -11,7 +10,7 @@ const Contact = () => {
         <div className="flex items-center gap-2">
           <p lang="en" className="flex flex-col gap-1 text-sm text-secondary">
             <a href="mailto:Info@excited.sa">Info@excited.sa</a>
-            <a href="tel:+966555066017">+966 55 506 6017</a>
+            {/* <a href="tel:+966555066017">+966 55 506 6017</a> */}
           </p>
           <div className="h-10 w-[2px] bg-secondary"></div>
           <a
