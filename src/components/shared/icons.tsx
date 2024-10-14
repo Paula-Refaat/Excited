@@ -27,6 +27,7 @@ export {
   Info as InfoIcon,
   Cctv as CameraIcon,
   LockKeyhole as PrivacyIcon,
+  Factory as FactoryIcon,
 } from 'lucide-react';
 
 type SvgProps = React.SVGProps<SVGSVGElement>;

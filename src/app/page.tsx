@@ -7,6 +7,7 @@ import Introduction from '@/components/introduction';
 import Logistics from '@/components/logistics';
 import ManagementServices from '@/components/management-services';
 import Message from '@/components/message';
+import ProductionLine from '@/components/production-line';
 import ServiceOverview from '@/components/service-overview';
 import { Logo } from '@/components/shared/icons';
 import Technology from '@/components/technology';
@@ -28,6 +29,7 @@ const Home = () => {
       <ManagementServices />
       <Logistics />
       <Entertainment />
+      <ProductionLine />
       <Technology />
       <Contact />
     </div>
