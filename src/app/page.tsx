@@ -1,4 +1,5 @@
 import CompanyStory from '@/components/company-story';
+import ConsultingSolutions from '@/components/consulting-solutions';
 import Contact from '@/components/contact';
 import DigitalMedia from '@/components/digital-media';
 import Entertainment from '@/components/entertainment';
@@ -29,6 +30,7 @@ const Home = () => {
       <EventManagement />
       <ManagementServices />
       <Logistics />
+      <ConsultingSolutions />
       <Entertainment />
       <ProductionLine />
       <Technology />

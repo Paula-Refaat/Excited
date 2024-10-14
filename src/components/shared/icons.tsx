@@ -29,6 +29,7 @@ export {
   LockKeyhole as PrivacyIcon,
   Factory as FactoryIcon,
   TvMinimalPlay as MediaIcon,
+  Handshake as HandshakeIcon,
 } from 'lucide-react';
 
 type SvgProps = React.SVGProps<SVGSVGElement>;
