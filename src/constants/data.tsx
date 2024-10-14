@@ -17,8 +17,13 @@ import {
   SecurityIcon,
   WaypointsIcon,
   HouseIcon,
+  AiIcon,
+  VisionIcon,
+  ChartIcon,
+  CameraIcon,
+  PrivacyIcon,
 } from '@/components/shared/icons';
-import { LucideIcon } from 'lucide-react';
+import { InfoIcon, LucideIcon } from 'lucide-react';
 import { ReactNode } from 'react';
 const ICON_SIZE = 36;
 type Service = {
@@ -212,5 +217,45 @@ export const ENTERTAINMENT_SERVICES: {
     description: `مناطق استراحة مزودة
 بألعاب أو أنشطة`,
     icon: HouseIcon,
+  },
+];
+
+export const TECHNOLOGY_SERVICES: {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+}[] = [
+  {
+    title: 'الذكاء الاصطناعي',
+    description: `روبوتات تفاعلية لتحسين تجربة
+المشاركين`,
+    icon: AiIcon,
+  },
+  {
+    title: 'الواقع المعزز/ الافتراضي',
+    description: `تجارب تفاعلية ونماذج ثلاثية الأبعاد
+`,
+    icon: VisionIcon,
+  },
+  {
+    title: 'تحليلات البيانات',
+    description: `تحسين الفعاليات عبر تحليل
+بيانات الحضور`,
+    icon: ChartIcon,
+  },
+  {
+    title: 'تطبيقات الحدث',
+    description: `معلومات وتحديثات حية`,
+    icon: InfoIcon,
+  },
+  {
+    title: 'التتبع والمراقبة',
+    description: `متابعة حركة الزوار وتحليل سلوكهم`,
+    icon: CameraIcon,
+  },
+  {
+    title: 'الأمن الرقمي',
+    description: `حماية البيانات والهوية`,
+    icon: PrivacyIcon,
   },
 ];

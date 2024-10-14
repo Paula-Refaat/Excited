@@ -21,6 +21,12 @@ export {
   Trophy as ContestIcon,
   Clapperboard as CinemaIcon,
   House as HouseIcon,
+  Bot as AiIcon,
+  Glasses as VisionIcon,
+  ChartColumn as ChartIcon,
+  Info as InfoIcon,
+  Cctv as CameraIcon,
+  LockKeyhole as PrivacyIcon,
 } from 'lucide-react';
 
 type SvgProps = React.SVGProps<SVGSVGElement>;
