@@ -1,8 +1,8 @@
 import Container from '@/components/layouts/container';
 import Section from '@/components/layouts/section';
+import { FactoryIcon } from '@/components/shared/icons';
 import { SubHeading } from '@/components/shared/typography';
 import { cn } from '@/lib/utils';
-import { FactoryIcon } from '@/components/shared/icons';
 import React, { FC } from 'react';
 type ProductionLineProps = React.ComponentProps<typeof Section>;
 const ProductionLine: FC<ProductionLineProps> = ({ className, ...props }) => {
@@ -16,7 +16,7 @@ const ProductionLine: FC<ProductionLineProps> = ({ className, ...props }) => {
           </div>
           <p className="leading-loose">
             في مصنع &quot;اكسايتد&quot;، نبدأ بتصميم وتخطيط المعدات بدقة، ثم
-            نجهز الآلات ونتحقق من جاهزيتها. بعد بدء التشغيل، نطبق معايير صارمة
+            نجهز الآلات ونتحقق من جاهزيتها. بعد بدء التشغيل نطبق معايير صارمة
             لمراقبة الجودة وننفذ صيانة دورية. نختتم بتحليل الأداء لتحسين الكفاءة
             وتقليل التكاليف
           </p>

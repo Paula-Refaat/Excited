@@ -12,7 +12,7 @@ const CompanyStory: FC<React.HTMLAttributes<HTMLDivElement>> = ({
     <Section className={cn('flex gap-12 md:px-20', className)} {...props}>
       <RotatedU className="hidden w-full md:block md:w-auto" />
       <article>
-        <Heading>قصة الشركة : Company Story</Heading>
+        <Heading>قصة الشركة</Heading>
         <SubHeading className="mt-16">
           رمزاً جديدًا للإبداع والتميز في عالم الفعاليات
         </SubHeading>
