@@ -14,6 +14,13 @@ export {
   CarTaxiFront as CarTaxiFrontIcon,
   Bus as BusIcon,
   Instagram as InstagramIcon,
+  PartyPopper as PartyIcon,
+  FerrisWheel as GamesIcon,
+  FlaskConical as ScienceIcon,
+  CookingPot as CookingIcon,
+  Trophy as ContestIcon,
+  Clapperboard as CinemaIcon,
+  House as HouseIcon,
 } from 'lucide-react';
 
 type SvgProps = React.SVGProps<SVGSVGElement>;

@@ -4,13 +4,21 @@ import {
   CarIcon,
   CarTaxiFrontIcon,
   ChartLineIcon,
+  CinemaIcon,
+  ContestIcon,
+  CookingIcon,
   DollarIcon,
+  GamesIcon,
+  PartyIcon,
   PlaneIcon,
   PrinterIcon,
   RibbonIcon,
+  ScienceIcon,
   SecurityIcon,
   WaypointsIcon,
+  HouseIcon,
 } from '@/components/shared/icons';
+import { LucideIcon } from 'lucide-react';
 import { ReactNode } from 'react';
 const ICON_SIZE = 36;
 type Service = {
@@ -160,5 +168,49 @@ export const MANAGEMENT_SERVICES: {
     title: 'تنظيم البرامج الفرعية',
     description:
       'نحن نقوم بتنظيم برامج وفعاليات فرعية مصاحبة للحدث أو  المعرض ، مثل المحـــاضرات وورش العمل والعروض التوضيحيــــــة والعـــروض الترفيهية. نهدف إلى توفير تجربـــة شاملة ومتنوعة للحضور.',
+  },
+];
+
+export const ENTERTAINMENT_SERVICES: {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+}[] = [
+  {
+    title: 'العروض الحية',
+    description: `موسيقى، عرض فلكوري ،
+وفرق فنية.`,
+    icon: PartyIcon,
+  },
+  {
+    title: 'الألعاب التفاعلية',
+    description: `واقع افتراضي، ألعاب إلكترونية`,
+    icon: GamesIcon,
+  },
+  {
+    title: 'الأنشطة العملية',
+    description: `ورش عمل ترفيهية وتجارب تفاعلية`,
+    icon: ScienceIcon,
+  },
+  {
+    title: 'تجارب الطهي',
+    description: `عروض طهي وتذوق أطعمة`,
+    icon: CookingIcon,
+  },
+  {
+    title: 'المسابقات والجوائز',
+    description: `مسابقات ترفيهية مع جوائز`,
+    icon: ContestIcon,
+  },
+  {
+    title: 'الاستوديوهات المتنقلة',
+    description: `مناطق للتصوير الفوتوغرافي والفيديو`,
+    icon: CinemaIcon,
+  },
+  {
+    title: 'مناطق الاستراحة',
+    description: `مناطق استراحة مزودة
+بألعاب أو أنشطة`,
+    icon: HouseIcon,
   },
 ];
