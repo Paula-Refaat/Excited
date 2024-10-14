@@ -1,9 +1,19 @@
 import { InstagramIcon } from '@/components/shared/icons';
-import React from 'react';
+import { cn } from '@/lib/utils';
+import React, { FC } from 'react';
 
-const Contact = () => {
+const Contact: FC<React.HTMLAttributes<HTMLDivElement>> = ({
+  className,
+  ...props
+}) => {
   return (
-    <div className="flex h-[50vh] items-center justify-center px-6">
+    <div
+      className={cn(
+        'flex h-[50vh] items-center justify-center px-6',
+        className,
+      )}
+      {...props}
+    >
       <div className="flex flex-col items-center gap-4">
         <p className="text-center text-xl font-bold md:text-2xl">
           يسعدنا تواصلك معنا وثقتك بنا

@@ -1,9 +1,13 @@
 'use client';
 
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
-import { useEffect, useRef } from 'react';
+import { cn } from '@/lib/utils';
+import { FC, useEffect, useRef } from 'react';
 
-const Introduction = () => {
+const Introduction: FC<React.HTMLAttributes<HTMLDivElement>> = ({
+  className,
+  ...props
+}) => {
   const ref = useRef<HTMLDivElement>(null);
   const isVisible = useIntersectionObserver(ref, { threshold: 0.1 });
   useEffect(() => {
@@ -15,7 +19,11 @@ const Introduction = () => {
     <div
       ref={ref}
       id="introduction"
-      className="flex w-full flex-col items-center justify-between gap-4 px-6 pt-10 lg:flex-row lg:gap-20 lg:px-40"
+      className={cn(
+        'flex w-full flex-col items-center justify-between gap-4 px-6 pt-10 lg:flex-row lg:gap-20 lg:px-40',
+        className,
+      )}
+      {...props}
     >
       <div className="relative h-[300px] w-full rounded-3xl bg-red-400 lg:h-[500px] lg:w-[470px]">
         {/* <Shape className='fill-none  stroke-primary bottom-[35%] left-[80%] absolute stroke-2'/>

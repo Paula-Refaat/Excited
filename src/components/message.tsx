@@ -1,9 +1,17 @@
 import Section from '@/components/layouts/section';
 import { Heading, SubHeading } from '@/components/shared/typography';
+import { cn } from '@/lib/utils';
+import { FC } from 'react';
 
-const Message = () => {
+const Message: FC<React.HTMLAttributes<HTMLDivElement>> = ({
+  className,
+  ...props
+}) => {
   return (
-    <Section className="flex items-center justify-center">
+    <Section
+      className={cn('flex items-center justify-center', className)}
+      {...props}
+    >
       <article className="flex flex-col items-center text-center">
         <Heading>الرسالة:</Heading>
         <SubHeading className="mt-16">تحقيق المعادلة الاكثر توازنا</SubHeading>

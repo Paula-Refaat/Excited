@@ -7,11 +7,14 @@ import { VISIONS } from '@/constants/data';
 import { cn } from '@/lib/utils';
 import React, { FC, useState } from 'react';
 
-const Vision = () => {
+const Vision: FC<React.HTMLAttributes<HTMLDivElement>> = ({
+  className,
+  ...props
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentVision = VISIONS[currentIndex];
   return (
-    <Section className="px-6 lg:px-20">
+    <Section className={cn('px-6 lg:px-20', className)} {...props}>
       <Heading as="h2">الرؤية:</Heading>
       <div className="mt-6 flex flex-col gap-16 md:flex-row">
         <div className="relative h-[200px] w-full rounded-3xl bg-red-500 lg:size-[500px]">

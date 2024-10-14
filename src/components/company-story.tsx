@@ -1,11 +1,15 @@
 import Section from '@/components/layouts/section';
 import { RotatedU } from '@/components/shared/icons';
 import { Heading, SubHeading } from '@/components/shared/typography';
-import React from 'react';
+import { cn } from '@/lib/utils';
+import React, { FC } from 'react';
 
-const CompanyStory = () => {
+const CompanyStory: FC<React.HTMLAttributes<HTMLDivElement>> = ({
+  className,
+  ...props
+}) => {
   return (
-    <Section className="flex gap-12 md:px-20">
+    <Section className={cn('flex gap-12 md:px-20', className)} {...props}>
       <RotatedU className="hidden w-full md:block md:w-auto" />
       <article>
         <Heading>قصة الشركة : Company Story</Heading>
