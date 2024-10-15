@@ -1,5 +1,6 @@
 'use client';
 import { Circle, Shape } from '@/components/shared/icons';
+import ScrollToSectionButton from '@/components/shared/scroll-to-section-button';
 import { Heading, Paragraph } from '@/components/shared/typography';
 import { cn } from '@/lib/utils';
 import React, { FC } from 'react';
@@ -11,10 +12,7 @@ const ServiceOverview: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
   return (
     <section
       id="services"
-      className={cn(
-        'relative flex h-[50vh] items-center lg:h-svh lg:px-20',
-        className,
-      )}
+      className={cn('py-12 lg:px-20', className)}
       {...props}
     >
       <div className="absolute left-20 top-24 hidden lg:block">
@@ -31,6 +29,7 @@ const ServiceOverview: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
           من المؤتمرات والمعارض إلى ورش العمل واللقاءات الحكومية.
         </Paragraph>
       </article>
+      <ScrollToSectionButton elementId="event-management" />
     </section>
   );
 };

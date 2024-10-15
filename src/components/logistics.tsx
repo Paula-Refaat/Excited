@@ -1,6 +1,7 @@
 import Container from '@/components/layouts/container';
 import Section from '@/components/layouts/section';
 import Item from '@/components/shared/item';
+import ScrollToSectionButton from '@/components/shared/scroll-to-section-button';
 import { SubHeading, Paragraph } from '@/components/shared/typography';
 import { LOGISTICS } from '@/constants/data';
 import { cn } from '@/lib/utils';
@@ -8,7 +9,11 @@ import React, { FC } from 'react';
 type LogisticsProps = React.ComponentProps<typeof Section>;
 const Logistics: FC<LogisticsProps> = ({ className, ...props }) => {
   return (
-    <Section className={cn('min-h-screen px-8 py-12', className)} {...props}>
+    <Section
+      id="logistics"
+      className={cn('flex items-center justify-center px-8 py-12', className)}
+      {...props}
+    >
       <Container className="mx-auto flex flex-col items-center justify-center text-center md:w-[70%]">
         <SubHeading>الخدمات اللوجستية</SubHeading>
         <Paragraph>
@@ -30,6 +35,7 @@ const Logistics: FC<LogisticsProps> = ({ className, ...props }) => {
           ))}
         </div>
       </Container>
+      <ScrollToSectionButton elementId="consulting-solutions" />
     </Section>
   );
 };

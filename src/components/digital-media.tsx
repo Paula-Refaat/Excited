@@ -1,13 +1,18 @@
 import Container from '@/components/layouts/container';
 import Section from '@/components/layouts/section';
 import { MediaIcon } from '@/components/shared/icons';
+import ScrollToSectionButton from '@/components/shared/scroll-to-section-button';
 import { SubHeading } from '@/components/shared/typography';
 import { cn } from '@/lib/utils';
 import React, { FC } from 'react';
 type DigitalMediaProps = React.ComponentProps<typeof Section>;
 const DigitalMedia: FC<DigitalMediaProps> = ({ className, ...props }) => {
   return (
-    <Section className={cn('px-8 py-12', className)} {...props}>
+    <Section
+      id="digital-media"
+      className={cn('flex items-center justify-center px-8 py-12', className)}
+      {...props}
+    >
       <Container className="mx-auto flex flex-col items-center justify-center text-center md:w-full lg:w-[90%]">
         <SubHeading>الاعلام الرقمي</SubHeading>
         <div className="relative mt-12 w-full rounded-2xl border border-primary px-6 py-12">
@@ -23,6 +28,7 @@ const DigitalMedia: FC<DigitalMediaProps> = ({ className, ...props }) => {
           </p>
         </div>
       </Container>
+      <ScrollToSectionButton elementId="contact" />
     </Section>
   );
 };

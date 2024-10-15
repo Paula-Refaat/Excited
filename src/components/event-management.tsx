@@ -3,6 +3,7 @@ import Container from '@/components/layouts/container';
 import Section from '@/components/layouts/section';
 import Box from '@/components/shared/box';
 import Item from '@/components/shared/item';
+import ScrollToSectionButton from '@/components/shared/scroll-to-section-button';
 import { Paragraph, SubHeading } from '@/components/shared/typography';
 import { EVENT_MANAGEMENT_SERVICES } from '@/constants/data';
 import useMediaQuery from '@/hooks/useMediaQuery';
@@ -16,7 +17,7 @@ const EventManagement: FC<EventManagementProps> = ({ className, ...props }) => {
   return (
     <Section
       id="event-management"
-      className={cn('px-8 py-12', className)}
+      className={cn('min-h-screen px-8 py-12', className)}
       {...props}
     >
       <Container className="mx-auto text-center md:w-[65%]">
@@ -69,6 +70,7 @@ const EventManagement: FC<EventManagementProps> = ({ className, ...props }) => {
           })}
         </div>
       </Container>
+      <ScrollToSectionButton elementId="management-services" />
     </Section>
   );
 };

@@ -8,6 +8,7 @@ const Contact: FC<React.HTMLAttributes<HTMLDivElement>> = ({
 }) => {
   return (
     <div
+      id="contact"
       className={cn(
         'flex h-[50vh] items-center justify-center px-6',
         className,

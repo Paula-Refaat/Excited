@@ -1,5 +1,6 @@
 import Container from '@/components/layouts/container';
 import Section from '@/components/layouts/section';
+import ScrollToSectionButton from '@/components/shared/scroll-to-section-button';
 import { SubHeading } from '@/components/shared/typography';
 import { TECHNOLOGY_SERVICES } from '@/constants/data';
 import { cn } from '@/lib/utils';
@@ -7,7 +8,11 @@ import React, { FC } from 'react';
 type TechnologyProps = React.ComponentProps<typeof Section>;
 const Technology: FC<TechnologyProps> = ({ className, ...props }) => {
   return (
-    <Section className={cn('min-h-screen px-8 py-12', className)} {...props}>
+    <Section
+      id="technology"
+      className={cn('flex items-center justify-center px-8 py-12', className)}
+      {...props}
+    >
       <Container className="mx-auto flex flex-col items-center justify-center text-center md:w-full lg:w-[90%]">
         <SubHeading>خدمات تكنلوجيا الحدث</SubHeading>
         <ul className="mt-8 flex w-full flex-wrap justify-center gap-4">
@@ -25,6 +30,7 @@ const Technology: FC<TechnologyProps> = ({ className, ...props }) => {
           ))}
         </ul>
       </Container>
+      <ScrollToSectionButton elementId="digital-media" />
     </Section>
   );
 };

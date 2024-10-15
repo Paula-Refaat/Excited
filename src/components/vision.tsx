@@ -1,6 +1,7 @@
 'use client';
 import Section from '@/components/layouts/section';
 import { FiveVisions } from '@/components/shared/icons';
+import ScrollToSectionButton from '@/components/shared/scroll-to-section-button';
 import { Heading, Paragraph, SubHeading } from '@/components/shared/typography';
 import { VISIONS } from '@/constants/data';
 import { cn } from '@/lib/utils';
@@ -26,7 +27,11 @@ const Vision: FC<React.HTMLAttributes<HTMLDivElement>> = ({
     addAnimation('title', ['animate__fadeInRight', 'animate__animated']);
   }, [currentIndex]);
   return (
-    <Section className={cn('px-6 lg:px-20', className)} {...props}>
+    <Section
+      id="vision"
+      className={cn('relative min-h-screen px-6 lg:px-20', className)}
+      {...props}
+    >
       <Heading as="h2">الرؤية:</Heading>
       <div className="mt-6 flex flex-col gap-16 md:flex-row">
         <div
@@ -73,6 +78,7 @@ const Vision: FC<React.HTMLAttributes<HTMLDivElement>> = ({
           </article>
         </div>
       </div>
+      <ScrollToSectionButton elementId="services" />
     </Section>
   );
 };

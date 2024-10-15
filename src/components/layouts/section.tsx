@@ -7,7 +7,10 @@ const Section: FC<React.HTMLAttributes<HTMLDivElement>> = ({
   ...props
 }) => {
   return (
-    <section className={cn('px-8 py-12 md:px-20', className)} {...props}>
+    <section
+      className={cn('relative px-8 py-12 md:min-h-screen md:px-20', className)}
+      {...props}
+    >
       {children}
     </section>
   );

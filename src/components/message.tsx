@@ -1,4 +1,5 @@
 import Section from '@/components/layouts/section';
+import ScrollToSectionButton from '@/components/shared/scroll-to-section-button';
 import { Heading, SubHeading } from '@/components/shared/typography';
 import { cn } from '@/lib/utils';
 import { FC } from 'react';
@@ -9,7 +10,11 @@ const Message: FC<React.HTMLAttributes<HTMLDivElement>> = ({
 }) => {
   return (
     <Section
-      className={cn('flex items-center justify-center', className)}
+      id="message"
+      className={cn(
+        'relative flex items-center justify-center lg:min-h-screen',
+        className,
+      )}
       {...props}
     >
       <article className="flex flex-col items-center text-center">
@@ -23,6 +28,7 @@ const Message: FC<React.HTMLAttributes<HTMLDivElement>> = ({
           مشرق.
         </p>
       </article>
+      <ScrollToSectionButton elementId="vision" />
     </Section>
   );
 };

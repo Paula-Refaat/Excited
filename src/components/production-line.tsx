@@ -1,13 +1,18 @@
 import Container from '@/components/layouts/container';
 import Section from '@/components/layouts/section';
 import { FactoryIcon } from '@/components/shared/icons';
+import ScrollToSectionButton from '@/components/shared/scroll-to-section-button';
 import { SubHeading } from '@/components/shared/typography';
 import { cn } from '@/lib/utils';
 import React, { FC } from 'react';
 type ProductionLineProps = React.ComponentProps<typeof Section>;
 const ProductionLine: FC<ProductionLineProps> = ({ className, ...props }) => {
   return (
-    <Section className={cn('px-8 py-12', className)} {...props}>
+    <Section
+      id="production-line"
+      className={cn('flex items-center justify-center px-8 py-12', className)}
+      {...props}
+    >
       <Container className="mx-auto flex flex-col items-center justify-center text-center md:w-full lg:w-[90%]">
         <SubHeading>خط الإنتاج</SubHeading>
         <div className="relative mt-12 w-full rounded-2xl border border-primary px-6 py-12">
@@ -22,6 +27,7 @@ const ProductionLine: FC<ProductionLineProps> = ({ className, ...props }) => {
           </p>
         </div>
       </Container>
+      <ScrollToSectionButton elementId="technology" />
     </Section>
   );
 };

@@ -1,6 +1,7 @@
 'use client';
 import Container from '@/components/layouts/container';
 import Section from '@/components/layouts/section';
+import ScrollToSectionButton from '@/components/shared/scroll-to-section-button';
 import { SubHeading, Paragraph } from '@/components/shared/typography';
 import { MANAGEMENT_SERVICES } from '@/constants/data';
 import useMediaQuery from '@/hooks/useMediaQuery';
@@ -15,6 +16,7 @@ const ManagementServices: FC<ManagementServicesProps> = ({
   const { isMatched: isMobile } = useMediaQuery({ maxWidth: 768 });
   return (
     <Section
+      id="management-services"
       style={{
         backgroundImage: isMobile ? '' : 'url(/image.webp)',
         backgroundPosition: 'center',
@@ -23,7 +25,10 @@ const ManagementServices: FC<ManagementServicesProps> = ({
         backdropFilter: 'blur(50%)',
         backgroundAttachment: 'fixed',
       }}
-      className={cn('relative min-h-[130vh] px-8 py-12', className)}
+      className={cn(
+        'relative min-h-[130vh] px-8 py-12 md:min-h-[130vh]',
+        className,
+      )}
       {...props}
     >
       <div className="absolute inset-0 bg-primary mix-blend-hue"></div>
@@ -65,6 +70,7 @@ const ManagementServices: FC<ManagementServicesProps> = ({
           ))}
         </div>
       </Container>
+      <ScrollToSectionButton elementId="logistics" />
     </Section>
   );
 };

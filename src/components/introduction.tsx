@@ -1,5 +1,6 @@
 'use client';
 
+import ScrollToSectionButton from '@/components/shared/scroll-to-section-button';
 import { cn } from '@/lib/utils';
 import { FC } from 'react';
 import { useInView } from 'react-intersection-observer';
@@ -17,7 +18,7 @@ const Introduction: FC<React.HTMLAttributes<HTMLDivElement>> = ({
       ref={ref}
       id="introduction"
       className={cn(
-        'flex min-h-screen w-full flex-col items-center justify-between gap-4 px-6 pt-10 lg:flex-row lg:gap-20 lg:px-40',
+        'relative flex min-h-screen w-full flex-col items-center justify-between gap-4 px-6 pt-10 lg:flex-row lg:gap-20 lg:px-40',
         className,
         {
           'opacity-0': !inView,
@@ -66,6 +67,7 @@ const Introduction: FC<React.HTMLAttributes<HTMLDivElement>> = ({
           </span>
         </p>
       </div>
+      <ScrollToSectionButton elementId="company-story" />
     </div>
   );
 };

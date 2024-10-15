@@ -1,5 +1,6 @@
 import Section from '@/components/layouts/section';
 import { RotatedU } from '@/components/shared/icons';
+import ScrollToSectionButton from '@/components/shared/scroll-to-section-button';
 import { Heading, SubHeading } from '@/components/shared/typography';
 import { cn } from '@/lib/utils';
 import React, { FC } from 'react';
@@ -9,7 +10,11 @@ const CompanyStory: FC<React.HTMLAttributes<HTMLDivElement>> = ({
   ...props
 }) => {
   return (
-    <Section className={cn('flex gap-12 md:px-20', className)} {...props}>
+    <Section
+      id="company-story"
+      className={cn('relative flex gap-12 md:px-20', className)}
+      {...props}
+    >
       <RotatedU className="hidden w-full md:block md:w-auto" />
       <article>
         <Heading>قصة الشركة</Heading>
@@ -24,6 +29,7 @@ const CompanyStory: FC<React.HTMLAttributes<HTMLDivElement>> = ({
           ونسعى دائماً للارتقاء بمعايير النجاح وتقديم تجارب لا تُنسى.
         </p>
       </article>
+      <ScrollToSectionButton elementId="message" />
     </Section>
   );
 };
