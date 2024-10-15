@@ -1,28 +1,27 @@
 'use client';
 
-import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 import { cn } from '@/lib/utils';
-import { FC, useRef } from 'react';
+import { FC } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 const Introduction: FC<React.HTMLAttributes<HTMLDivElement>> = ({
   className,
   ...props
 }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const isVisible = useIntersectionObserver(ref, {
+  const { ref, inView } = useInView({
     threshold: 0.1,
-    once: true,
+    triggerOnce: true,
   });
   return (
     <div
       ref={ref}
       id="introduction"
       className={cn(
-        'flex w-full flex-col items-center justify-between gap-4 px-6 pt-10 lg:flex-row lg:gap-20 lg:px-40',
+        'flex min-h-screen w-full flex-col items-center justify-between gap-4 px-6 pt-10 lg:flex-row lg:gap-20 lg:px-40',
         className,
         {
-          'opacity-0': !isVisible,
-          'animate__animated animate__fadeInUp': isVisible,
+          'opacity-0': !inView,
+          'animate__animated animate__fadeInUp': inView,
         },
       )}
       {...props}
