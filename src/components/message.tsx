@@ -28,7 +28,7 @@ const Message: FC<React.HTMLAttributes<HTMLDivElement>> = ({
           مشرق.
         </p>
       </article>
-      <ScrollToSectionButton elementId="vision" />
+      <ScrollToSectionButton elementId="creative" />
     </Section>
   );
 };

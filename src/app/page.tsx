@@ -2,6 +2,7 @@
 import CompanyStory from '@/components/company-story';
 import ConsultingSolutions from '@/components/consulting-solutions';
 import Contact from '@/components/contact';
+import Creative from '@/components/creative';
 import DigitalMedia from '@/components/digital-media';
 import Entertainment from '@/components/entertainment';
 import EventManagement from '@/components/event-management';
@@ -128,6 +129,7 @@ const Home = () => {
       <Introduction />
       <CompanyStory />
       <Message />
+      <Creative />
       <Vision />
       <ServiceOverview />
       <EventManagement />
