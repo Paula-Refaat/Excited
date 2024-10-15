@@ -30,6 +30,7 @@ export {
   Factory as FactoryIcon,
   TvMinimalPlay as MediaIcon,
   Handshake as HandshakeIcon,
+  Menu as MenuIcon,
 } from 'lucide-react';
 
 type SvgProps = React.SVGProps<SVGSVGElement>;
