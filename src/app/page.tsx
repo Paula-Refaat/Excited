@@ -80,7 +80,6 @@ const Home = () => {
               disabled
               className="rounded px-2 py-1 hover:bg-secondary-foreground disabled:opacity-50"
             >
-              سابقة أعمالنا
             </button>
           </nav>
 
