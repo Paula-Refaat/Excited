@@ -3,7 +3,6 @@ import Section from '@/components/layouts/section';
 import { FiveVisions } from '@/components/shared/icons';
 import { Heading, Paragraph, SubHeading } from '@/components/shared/typography';
 import { VISIONS } from '@/constants/data';
-import useMediaQuery from '@/hooks/useMediaQuery';
 import { cn } from '@/lib/utils';
 import React, { FC, useEffect, useState } from 'react';
 
@@ -13,9 +12,7 @@ const Vision: FC<React.HTMLAttributes<HTMLDivElement>> = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentVision = VISIONS[currentIndex];
-  const { isMatched: isMobile } = useMediaQuery({
-    maxWidth: 768,
-  });
+
   useEffect(() => {
     const addAnimation = (elementId: string, animationClasses: string[]) => {
       const element = document.getElementById(elementId);
@@ -25,14 +22,9 @@ const Vision: FC<React.HTMLAttributes<HTMLDivElement>> = ({
         element.classList.remove(...animationClasses);
       });
     };
-    if (isMobile) {
-      addAnimation('image', ['animate__slideInLeft', 'animate__animated']);
-    } else {
-      addAnimation('image', ['animate__slideInUp', 'animate__animated']);
-    }
     addAnimation('paragraph', ['animate__fadeInUp', 'animate__animated']);
     addAnimation('title', ['animate__fadeInRight', 'animate__animated']);
-  }, [currentIndex, isMobile]);
+  }, [currentIndex]);
   return (
     <Section className={cn('px-6 lg:px-20', className)} {...props}>
       <Heading as="h2">الرؤية:</Heading>
@@ -42,9 +34,9 @@ const Vision: FC<React.HTMLAttributes<HTMLDivElement>> = ({
           className="relative h-[200px] w-full rounded-3xl lg:size-[500px]"
         >
           <img
-            src={currentVision.img}
+            src={'/vision.webp'}
             alt="image"
-            className="absolute size-full rounded-[inherit] object-cover"
+            className="absolute size-full rounded-[inherit] object-contain object-center"
           />
           <div className="absolute inset-0 size-full rounded-[inherit] bg-primary opacity-80 mix-blend-hue"></div>
           <div className="absolute inset-0 size-full rounded-[inherit] bg-black/5"></div>
