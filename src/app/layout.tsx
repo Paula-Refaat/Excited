@@ -1,3 +1,4 @@
+import 'animate.css';
 import '@/app/globals.css';
 import { Metadata } from 'next';
 import { Alexandria } from 'next/font/google';

@@ -6,7 +6,7 @@
     "dev": "set NODE_ENV=development && next dev -p 7000",
     "build": "set NODE_ENV=production && next build",
     "start": "set NODE_ENV=production && next start -p 7000",
-    "export":"set NODE_ENV=production && next build && next export",
+    "export": "set NODE_ENV=production && next build && next export",
     "lint:fix": "eslint src --fix",
     "lint": "eslint src",
     "format": "prettier --write .",
@@ -14,6 +14,7 @@
     "pre-commit": "npm run format && npm run lint:fix && npm run type-check"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
     "clsx": "^2.1.0",
     "lucide-react": "^0.445.0",
     "next": "14.1.0",

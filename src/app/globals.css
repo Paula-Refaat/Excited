@@ -219,7 +219,9 @@ strong {
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
 }
-
+#introduction {
+  --animate-delay: 0.5s;
+}
 @media screen and (min-width: 640px) {
   :root {
     --translateY: 150px;

@@ -2,19 +2,17 @@
 
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 import { cn } from '@/lib/utils';
-import { FC, useEffect, useRef } from 'react';
+import { FC, useRef } from 'react';
 
 const Introduction: FC<React.HTMLAttributes<HTMLDivElement>> = ({
   className,
   ...props
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isVisible = useIntersectionObserver(ref, { threshold: 0.1 });
-  useEffect(() => {
-    if (isVisible) {
-      ref.current?.classList.add('fadeInDown');
-    }
-  }, [isVisible]);
+  const isVisible = useIntersectionObserver(ref, {
+    threshold: 0.1,
+    once: true,
+  });
   return (
     <div
       ref={ref}
@@ -22,10 +20,14 @@ const Introduction: FC<React.HTMLAttributes<HTMLDivElement>> = ({
       className={cn(
         'flex w-full flex-col items-center justify-between gap-4 px-6 pt-10 lg:flex-row lg:gap-20 lg:px-40',
         className,
+        {
+          'opacity-0': !isVisible,
+          'animate__animated animate__fadeInUp': isVisible,
+        },
       )}
       {...props}
     >
-      <div className="relative h-[300px] w-full rounded-3xl bg-red-400 lg:h-[500px] lg:w-[470px]">
+      <div className="relative h-[300px] w-full rounded-3xl lg:h-[500px] lg:w-[470px]">
         {/* <Shape className='fill-none  stroke-primary bottom-[35%] left-[80%] absolute stroke-2'/>
         <Shape className='fill-none absolute top-[35%] right-[80%] rotate-180 stroke-primary stroke-2'/> */}
         <img
@@ -33,8 +35,8 @@ const Introduction: FC<React.HTMLAttributes<HTMLDivElement>> = ({
           alt="image"
           className="absolute size-full rounded-[inherit] object-cover"
         />
-        <div className="absolute inset-0 size-full bg-primary opacity-80 mix-blend-hue"></div>
-        <div className="absolute inset-0 size-full bg-black/5"></div>
+        <div className="absolute inset-0 size-full rounded-[inherit] bg-primary opacity-80 mix-blend-hue"></div>
+        <div className="absolute inset-0 size-full rounded-[inherit] bg-black/5"></div>
       </div>
       <div className="flex-1 py-4 lg:max-w-[700px]">
         <h3 className="mb-2 text-lg font-bold">مقدمة</h3>
