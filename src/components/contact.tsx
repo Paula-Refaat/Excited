@@ -69,7 +69,7 @@ const Contact: FC<React.HTMLAttributes<HTMLDivElement>> = ({
       <form
         ref={form}
         onSubmit={sendEmail}
-        className="mx-auto flex w-full flex-col gap-6 md:w-[80%] lg:w-[60%]"
+        className="mx-auto mt-10 flex w-full flex-col gap-6 md:w-[80%] lg:w-[60%]"
       >
         <div className="flex w-full flex-col gap-2">
           <label htmlFor="name">الاسم</label>
