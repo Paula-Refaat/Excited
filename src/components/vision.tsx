@@ -1,11 +1,11 @@
 'use client';
 import Section from '@/components/layouts/section';
 import { FiveVisions } from '@/components/shared/icons';
-import Reveal from '@/components/shared/reveal';
 import { Heading, Paragraph, SubHeading } from '@/components/shared/typography';
 import { VISIONS } from '@/constants/data';
+import useMediaQuery from '@/hooks/useMediaQuery';
 import { cn } from '@/lib/utils';
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 
 const Vision: FC<React.HTMLAttributes<HTMLDivElement>> = ({
   className,
@@ -13,18 +13,41 @@ const Vision: FC<React.HTMLAttributes<HTMLDivElement>> = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentVision = VISIONS[currentIndex];
+  const { isMatched: isMobile } = useMediaQuery({
+    maxWidth: 768,
+  });
+  useEffect(() => {
+    const addAnimation = (elementId: string, animationClasses: string[]) => {
+      const element = document.getElementById(elementId);
+      if (!element) return;
+      element.classList.add(...animationClasses);
+      element.addEventListener('animationend', () => {
+        element.classList.remove(...animationClasses);
+      });
+    };
+    if (isMobile) {
+      addAnimation('image', ['animate__slideInLeft', 'animate__animated']);
+    } else {
+      addAnimation('image', ['animate__slideInUp', 'animate__animated']);
+    }
+    addAnimation('paragraph', ['animate__fadeInUp', 'animate__animated']);
+    addAnimation('title', ['animate__fadeInRight', 'animate__animated']);
+  }, [currentIndex, isMobile]);
   return (
     <Section className={cn('px-6 lg:px-20', className)} {...props}>
       <Heading as="h2">الرؤية:</Heading>
       <div className="mt-6 flex flex-col gap-16 md:flex-row">
-        <div className="relative h-[200px] w-full rounded-3xl bg-red-500 lg:size-[500px]">
+        <div
+          id="image"
+          className="relative h-[200px] w-full rounded-3xl lg:size-[500px]"
+        >
           <img
-            src="/image.webp"
+            src={currentVision.img}
             alt="image"
             className="absolute size-full rounded-[inherit] object-cover"
           />
-          <div className="absolute inset-0 size-full bg-primary opacity-80 mix-blend-hue"></div>
-          <div className="absolute inset-0 size-full bg-black/5"></div>
+          <div className="absolute inset-0 size-full rounded-[inherit] bg-primary opacity-80 mix-blend-hue"></div>
+          <div className="absolute inset-0 size-full rounded-[inherit] bg-black/5"></div>
         </div>
         <div className="flex flex-col gap-12 lg:gap-32">
           <div>
@@ -34,7 +57,9 @@ const Vision: FC<React.HTMLAttributes<HTMLDivElement>> = ({
                 <li key={i}>
                   <SvgPagination
                     isActive={i === currentIndex}
-                    onClick={() => setCurrentIndex(i)}
+                    onClick={() => {
+                      setCurrentIndex(i);
+                    }}
                   >
                     {i + 1}
                   </SvgPagination>
@@ -43,16 +68,16 @@ const Vision: FC<React.HTMLAttributes<HTMLDivElement>> = ({
             </ul>
           </div>
           <article className="flex flex-col items-start">
-            <Reveal>
-              <SubHeading className="lg:text-lg">
-                <span>{currentIndex + 1}. </span> {currentVision.title}
-              </SubHeading>
-            </Reveal>
-            <Reveal side="up">
-              <Paragraph className="mx-[none] max-w-[300px] px-0 text-start lg:w-full">
-                {currentVision.description}
-              </Paragraph>
-            </Reveal>
+            <SubHeading id="title" className="lg:text-lg">
+              <span>{currentIndex + 1}. </span> {currentVision.title}
+            </SubHeading>
+
+            <Paragraph
+              id="paragraph"
+              className="mx-[none] max-w-[300px] px-0 text-start lg:w-full"
+            >
+              {currentVision.description}
+            </Paragraph>
           </article>
         </div>
       </div>

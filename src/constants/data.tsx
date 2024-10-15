@@ -118,26 +118,31 @@ export const LOGISTICS: Service[] = [
   },
 ];
 
-export const VISIONS: { title: string; description: string }[] = [
+export const VISIONS: { title: string; description: string; img?: string }[] = [
   {
+    img: '/1.webp',
     title: 'التميز',
     description: 'تنظيم الأحداث والمؤتمرات من خلال تقديم تجارب مبهرة لا تُنسى.',
   },
   {
+    img: '/2.webp',
     title: 'المشاركة',
     description: 'طريقة تفاعلية تترك أثراً عميقاً وتحقق الأهداف المرجوة.',
   },
   {
+    img: '/3.webp',
     title: 'التمكين',
     description:
       'تحقيق رؤية عملائنا وتحويلها إلى واقع ملموس عبر التخطيط والتنفيذ المتقن.',
   },
   {
+    img: '/4.webp',
     title: 'الكفاءة',
     description:
       'تقديم خدماتنا بأعلى مستويات الكفاءة والاحترافية لتحقيق أعلى التوقعات الممكنة.',
   },
   {
+    img: '/image.webp',
     title: 'التطور',
     description: 'التحسين المستمر في الخدمات ومواكبة أفضل التقنيات والمستجدات',
   },
