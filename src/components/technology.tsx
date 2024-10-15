@@ -10,7 +10,10 @@ const Technology: FC<TechnologyProps> = ({ className, ...props }) => {
   return (
     <Section
       id="technology"
-      className={cn('flex items-center justify-center px-8 py-12', className)}
+      className={cn(
+        'flex items-center justify-center px-8 py-12 md:min-h-[120vh]',
+        className,
+      )}
       {...props}
     >
       <Container className="mx-auto flex flex-col items-center justify-center text-center md:w-full lg:w-[90%]">

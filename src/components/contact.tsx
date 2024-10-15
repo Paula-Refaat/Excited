@@ -37,7 +37,7 @@ const Contact: FC<React.HTMLAttributes<HTMLDivElement>> = ({
     <div
       id="contact"
       className={cn(
-        'flex min-h-[100vh] flex-col items-center justify-center px-6',
+        'flex min-h-[100vh] flex-col items-center justify-center px-6 py-10',
         className,
       )}
       {...props}
