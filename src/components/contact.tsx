@@ -42,34 +42,10 @@ const Contact: FC<React.HTMLAttributes<HTMLDivElement>> = ({
       )}
       {...props}
     >
-      <div className="flex flex-col items-center gap-4">
-        <p className="text-center text-xl font-bold md:text-2xl">
-          يسعدنا تواصلك معنا وثقتك بنا
-        </p>
-        <div className="flex items-center gap-2">
-          <p lang="en" className="flex flex-col gap-1 text-sm text-secondary">
-            <a href="mailto:Info@excited.sa">Info@excited.sa</a>
-            {/* <a href="tel:+966555066017">+966 55 506 6017</a> */}
-          </p>
-          <div className="h-10 w-[2px] bg-secondary"></div>
-          <a
-            href="https://www.instagram.com/excited.sa?igsh=czJwYmFkOXNxOTZl&utm_source=qr"
-            className="flex size-10 items-center justify-center rounded-full bg-foreground p-1"
-          >
-            <InstagramIcon className="size-full text-background" />
-          </a>
-          <a
-            href="https://x.com/excited_sa?s=21"
-            className="flex size-10 items-center justify-center rounded-full bg-foreground"
-          >
-            <img src="/x.png" alt="X" className="size-[60%]" />
-          </a>
-        </div>
-      </div>
       <form
         ref={form}
         onSubmit={sendEmail}
-        className="mx-auto mt-10 flex w-full flex-col gap-6 md:w-[80%] lg:w-[60%]"
+        className="mx-auto flex w-full flex-col gap-6 md:w-[80%] lg:w-[60%]"
       >
         <div className="flex w-full flex-col gap-2">
           <label htmlFor="name">الاسم</label>
@@ -119,6 +95,30 @@ const Contact: FC<React.HTMLAttributes<HTMLDivElement>> = ({
           }
         </button>
       </form>
+      <div className="mt-10 flex flex-col items-center gap-4">
+        <p className="text-center text-xl font-bold md:text-2xl">
+          يسعدنا تواصلك معنا وثقتك بنا
+        </p>
+        <div className="flex items-center gap-2">
+          <p lang="en" className="flex flex-col gap-1 text-sm text-secondary">
+            <a href="mailto:Info@excited.sa">Info@excited.sa</a>
+            {/* <a href="tel:+966555066017">+966 55 506 6017</a> */}
+          </p>
+          <div className="h-10 w-[2px] bg-secondary"></div>
+          <a
+            href="https://www.instagram.com/excited.sa?igsh=czJwYmFkOXNxOTZl&utm_source=qr"
+            className="flex size-10 items-center justify-center rounded-full bg-foreground p-1"
+          >
+            <InstagramIcon className="size-full text-background" />
+          </a>
+          <a
+            href="https://x.com/excited_sa?s=21"
+            className="flex size-10 items-center justify-center rounded-full bg-foreground"
+          >
+            <img src="/x.png" alt="X" className="size-[60%]" />
+          </a>
+        </div>
+      </div>
     </div>
   );
 };

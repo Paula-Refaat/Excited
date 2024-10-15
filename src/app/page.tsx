@@ -77,16 +77,13 @@ const Home = () => {
                   element: document.getElementById('management-services'),
                 });
               }}
-              className="rounded px-2 py-1 hover:bg-secondary-foreground"
+              disabled
+              className="rounded px-2 py-1 hover:bg-secondary-foreground disabled:opacity-50"
             >
               سابقة أعمالنا
             </button>
           </nav>
-          <p className="border-t border-foreground py-4 text-sm font-light">
-            ... شركة سعودية متخصصــة في تنظيــــم وإنشــــــــــــاء
-            الأحـــــــــداث والفعـــــاليــــــــات على المستوى الحكــومــي
-            والقطاع الخاص ...
-          </p>
+
           <div
             lang="en"
             className="flex w-full flex-col gap-2 border-t border-foreground py-4 pl-4 text-sm font-light"
