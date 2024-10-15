@@ -17,7 +17,7 @@ const EventManagement: FC<EventManagementProps> = ({ className, ...props }) => {
   return (
     <Section
       id="event-management"
-      className={cn('min-h-screen px-8 py-12', className)}
+      className={cn('px-8 py-12 md:min-h-[120vh]', className)}
       {...props}
     >
       <Container className="mx-auto text-center md:w-[65%]">
