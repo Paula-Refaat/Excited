@@ -12,7 +12,10 @@ const ServiceOverview: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
   return (
     <section
       id="services"
-      className={cn('py-12 lg:px-20', className)}
+      className={cn(
+        'relative flex items-center py-12 md:min-h-screen lg:px-20',
+        className,
+      )}
       {...props}
     >
       <div className="absolute left-20 top-24 hidden lg:block">
