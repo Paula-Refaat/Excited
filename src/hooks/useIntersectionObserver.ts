@@ -4,6 +4,7 @@ interface IntersectionObserverOptions {
   root?: Element | null;
   rootMargin?: string;
   threshold?: number | number[];
+  once?: boolean;
 }
 
 const useIntersectionObserver = (
@@ -15,6 +16,9 @@ const useIntersectionObserver = (
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       setIsIntersecting(entry.isIntersecting);
+      if (entry.isIntersecting && options?.once) {
+        observer.unobserve(entry.target);
+      }
     }, options);
 
     const currentRef = targetRef.current;
