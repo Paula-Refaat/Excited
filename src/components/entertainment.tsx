@@ -11,7 +11,7 @@ const Entertainment: FC<EntertainmentProps> = ({ className, ...props }) => {
     <Section
       id="entertainment"
       className={cn(
-        'flex items-center justify-center px-8 py-12 md:min-h-[120vh]',
+        'flex items-center justify-center px-8 py-12 md:min-h-[140vh]',
         className,
       )}
       {...props}
